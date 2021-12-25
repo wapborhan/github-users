@@ -13,6 +13,24 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-dark bg-primary mb-3">
+    <div class="container">
+      <a href="#" class="navbar-brand">Github User's</a>
+    </div>
+  </nav>
+
+  <div class="container searchContainer">
+    <div class="search card card-body">
+      <h1>Search Github User's</h1>
+      <p class="lead">Enter a Username to Fetch a user profile and repos</p>
+      <input type="text" class="form-control" id="searchUser" placeholder="Github Username.....">
+      <button id="searchBtn" class="btn btn-success mt-3">Search</button>
+    </div>
+    <br>
+    <div id="profile"></div>
+  </div>
+
+  <footer class="mt-5 p-3 text-center bg-light">Github User</footer>
 
   <!-- Bootstrap V5 -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
