@@ -72,18 +72,22 @@ class UI {
     let output = "";
     repos.forEach((repo) => {
       output += `
-          <div class="card card-body mb-3">
-              <div class="row">
-                  <div class="col-md-6">
-                      <a class="mb-6" href="${repo.html_url}" target="_blank">${repo.name}</a>
-                  </div>
-                  <div class="col-md-6">
-                      <span class="badge bg-primary p-2">Stars: ${repo.stargazers_count}</span>
-                      <span class="badge bg-secondary p-2">Watchers: ${repo.watchers_count}</span>
-                      <span class="badge bg-success p-2">Forks: ${repo.forks_count}</span>
-                  </div>
-              </div>
+      <div class="card card-body mb-3">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="repod">
+            <a class="mb-6 text-uppercase text-decoration-none" href="${repo.html_url}" target="_blank">${repo.name}</a>
+            <p class="mt-2 mb-2">${repo.description}</p>
+            <h6>Language: <span class="badge bg-info">${repo.language}</span></h6>
           </div>
+        </div>
+        <div class="col-md-6">
+          <span class="badge bg-primary p-2">Stars: ${repo.stargazers_count}</span>
+          <span class="badge bg-secondary p-2">Watchers: ${repo.watchers_count}</span>
+          <span class="badge bg-success p-2">Forks: ${repo.forks_count}</span>
+        </div>
+      </div>
+    </div>
       `;
     });
     repoOutput.innerHTML = output;
