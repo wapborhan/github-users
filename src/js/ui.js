@@ -1,6 +1,7 @@
 class UI {
   constructor() {
     this.profile = document.querySelector("#profile");
+    this.repos = document.querySelector("#repos");
   }
 
   showProfile(user) {
@@ -32,7 +33,9 @@ class UI {
         <span class="badge bg-primary">Public Repos: ${user.public_repos}</span>
         <span class="badge bg-info">Public Gists: ${user.public_gists}</span>
         <br><br>
+        <div id="repos">
         <h1>Repositories Under Constraction</h1>
+        </div>
       </div>
     </div>
   </div>`;
@@ -51,6 +54,9 @@ class UI {
     let search = document.querySelector(".search");
 
     container.insertBefore(div, search);
+    setTimeout(() => {
+      this.clearAlert();
+    }, 3000);
   }
 
   clearAlert() {
@@ -58,5 +64,28 @@ class UI {
     if (currentAlert) {
       currentAlert.remove();
     }
+  }
+
+  // Show Repos
+  showrepo(repos) {
+    const repoOutput = document.getElementById("repos");
+    let output = "";
+    repos.forEach((repo) => {
+      output += `
+          <div class="card card-body mb-3">
+              <div class="row">
+                  <div class="col-md-6">
+                      <a class="mb-6" href="${repo.html_url}" target="_blank">${repo.name}</a>
+                  </div>
+                  <div class="col-md-6">
+                      <span class="badge bg-primary p-2">Stars: ${repo.stargazers_count}</span>
+                      <span class="badge bg-secondary p-2">Watchers: ${repo.watchers_count}</span>
+                      <span class="badge bg-success p-2">Forks: ${repo.forks_count}</span>
+                  </div>
+              </div>
+          </div>
+      `;
+    });
+    repoOutput.innerHTML = output;
   }
 }

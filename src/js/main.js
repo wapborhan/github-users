@@ -4,6 +4,17 @@ let ui = new UI();
 
 searchBtn.addEventListener("click", (e) => {
   let userText = searchUser.value;
+  fetch(`https://api.github.com/users/${userText}/repos`)
+    .then((result) => result.json())
+    .then((data) => {
+      if (data.message == "Not Found") {
+        //Show Alert
+        // ui.showAlert("User Not Found!", "alert alert-danger");
+      } else {
+        //Show Profile
+        ui.showrepo(data);
+      }
+    });
   if (userText != " ") {
     //Fetch Api
     fetch(`https://api.github.com/users/${userText}`)
