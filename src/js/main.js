@@ -13,6 +13,7 @@ searchBtn.addEventListener("click", (e) => {
           //Show Alert
         } else {
           //Show Profile
+          ui.showProfile(data);
         }
       });
   } else {
