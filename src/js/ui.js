@@ -22,6 +22,7 @@ class UI {
         <ul class="text-left mt-4 mb-2 p-0">
           <li class="list-group-item">Company: ${user.company}</li>
           <li class="list-group-item">Website: <a style="text-decoration: none;" href="http://${user.blog}">${user.blog}</a></li>
+          <li class="list-group-item">Twitter: <a style="text-decoration: none;" href="http://www.twitter.com/${user.twitter_username}">${user.twitter_username}</a></li>
           <li class="list-group-item">Address: ${user.location}</li>
           <li class="list-group-item">Member Since: ${user.created_at}</li>
         </ul>
@@ -31,7 +32,7 @@ class UI {
         <span class="badge bg-primary">Public Repos: ${user.public_repos}</span>
         <span class="badge bg-info">Public Gists: ${user.public_gists}</span>
         <br><br>
-
+        <h1>Repositories Under Constraction</h1>
       </div>
     </div>
   </div>`;
