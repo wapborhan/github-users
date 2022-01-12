@@ -33,3 +33,36 @@ searchBtn.addEventListener("click", (e) => {
     ui.clearProfile();
   }
 });
+
+//Default Profile Show
+
+function normalProfile() {
+  fetch(`https://api.github.com/users/wapborhan`)
+    .then((result) => result.json())
+    .then((data) => {
+      if (data.message == "Not Found") {
+        //Show Alert
+        // ui.showAlert("User Not Found!", "alert alert-danger");
+      } else {
+        //Show Profile
+        ui.showProfile(data);
+      }
+    });
+}
+normalProfile();
+
+//Default Repos Show
+function normalRepo() {
+  fetch(`https://api.github.com/users/wapborhan/repos`)
+    .then((result) => result.json())
+    .then((data) => {
+      if (data.message == "Not Found") {
+        //Show Alert
+        // ui.showAlert("User Not Found!", "alert alert-danger");
+      } else {
+        //Show Profile
+        ui.showrepo(data);
+      }
+    });
+}
+normalRepo();

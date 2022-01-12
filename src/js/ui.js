@@ -36,7 +36,7 @@ class UI {
         <span class="badge bg-info">Public Gists: ${user.public_gists}</span>
         <br><br>
         <div id="repos">
-        <h1>Repositories Under Constraction</h1>
+        <h1>Loading...</h1>
         </div>
       </div>
     </div>
@@ -72,6 +72,7 @@ class UI {
   showrepo(repos) {
     const repoOutput = document.getElementById("repos");
     let output = "";
+
     repos.forEach((repo) => {
       output += `
       <div class="card card-body mb-3">
