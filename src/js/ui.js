@@ -7,7 +7,7 @@ class UI {
   showProfile(user) {
     this.clearAlert();
     this.profile.innerHTML = ` 
-    <div class="card card-body mb-3">
+    <div class="card card-body mb-3 shadow">
     <div class="row">
       <div class="col-lg-3">
         <div class="sticky-top">
@@ -75,7 +75,7 @@ class UI {
 
     repos.forEach((repo) => {
       output += `
-      <div class="card card-body mb-3">
+      <div class="card card-body mb-3 ">
       <div class="row">
         <div class="col-md-6">
           <div class="repod">
@@ -84,7 +84,7 @@ class UI {
             <h6>Language: <span class="badge bg-info">${repo.language}</span></h6>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 text-end">
           <span class="badge bg-primary p-2">Stars: ${repo.stargazers_count}</span>
           <span class="badge bg-secondary p-2">Watchers: ${repo.watchers_count}</span>
           <span class="badge bg-success p-2">Forks: ${repo.forks_count}</span>
